@@ -138,6 +138,9 @@ struct ContentView: View {
                             PuzzleTileView(tile: tile)
                                 .frame(width: (geometry.size.width - (tileSpacing*2)) / 3,
                                        height:(geometry.size.width - (tileSpacing*2)) / 3)
+                                .onTapGesture{
+                                    tappedTile(row: row, column: column)
+                                }
                         }
                     }
                 }
@@ -200,6 +203,55 @@ struct ContentView: View {
 extension ContentView {
     enum Direction {
         case up, down, left, right
+    }
+    
+    private func tappedTile(row: Int, column: Int){
+        guard userWon == false else {return}
+        guard var shuffledTiles = shuffledTiles else {return}
+        
+        guard shuffledTiles[row][column].isSpareTile == false else {return}
+        
+        if let spareTileIndex = findAdjacentSpareTile(to: (row, column)){
+            moves += 1
+            let tappedTile = shuffledTiles[row][column]
+            shuffledTiles[row][column] = shuffledTiles[spareTileIndex.0][spareTileIndex.1]
+            shuffledTiles[spareTileIndex.0][spareTileIndex.1] = tappedTile
+            
+            self.shuffledTiles = shuffledTiles
+            userWon = self.shuffledTiles == orderedTiles
+        }
+    }
+    
+    private func findAdjacentSpareTile(to tileIndex: (Int, Int)) -> (Int, Int)? {
+        let directions: [Direction] = [.up,.down,.left,.right]
+        
+        for direction in directions {
+            let adjacentTileIndex = getAdjacentTileIndex(from: tileIndex, direction: direction)
+            if isValidIndex(adjacentTileIndex), shuffledTiles?[adjacentTileIndex.0][adjacentTileIndex.1].isSpareTile ?? false {
+                return adjacentTileIndex
+            }
+        }
+        
+        return nil
+    }
+    
+    private func getAdjacentTileIndex(from tileIndex: (Int, Int), direction: Direction) -> (Int, Int) {
+        switch direction {
+        case .up:
+            return(tileIndex.0 - 1, tileIndex.1)
+        case .down:
+            return(tileIndex.0 + 1, tileIndex.1)
+        case .left:
+            return(tileIndex.0, tileIndex.1 - 1)
+        case .right:
+            return(tileIndex.0, tileIndex.1 + 1)
+        }
+    }
+    
+    private func isValidIndex(_ tileIndex: (Int, Int)) -> Bool {
+        guard let shuffledTiles = shuffledTiles else {return false}
+        return tileIndex.0 >= 0 && tileIndex.0 < shuffledTiles.count &&
+        tileIndex.1 >= 0 && tileIndex.1 < shuffledTiles[tileIndex.0].count
     }
 }
 
