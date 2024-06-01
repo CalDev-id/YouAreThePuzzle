@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		2ECAEC612C0983520049BC6C /* YouAreThePuzzleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECAEC602C0983520049BC6C /* YouAreThePuzzleApp.swift */; };
-		2ECAEC632C0983520049BC6C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECAEC622C0983520049BC6C /* ContentView.swift */; };
 		2ECAEC652C0983540049BC6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ECAEC642C0983540049BC6C /* Assets.xcassets */; };
 		2ECAEC682C0983540049BC6C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ECAEC672C0983540049BC6C /* Preview Assets.xcassets */; };
+		2ECAEC6F2C099EDE0049BC6C /* PuzzleTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECAEC6E2C099EDE0049BC6C /* PuzzleTile.swift */; };
+		2ECAEC712C099F1B0049BC6C /* PuzzleTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECAEC702C099F1B0049BC6C /* PuzzleTileView.swift */; };
+		2ECAEC732C09A1D90049BC6C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECAEC722C09A1D90049BC6C /* ContentView.swift */; };
+		2ECAEC772C09BE8C0049BC6C /* PuzzleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECAEC762C09BE8C0049BC6C /* PuzzleLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2ECAEC5D2C0983520049BC6C /* YouAreThePuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouAreThePuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ECAEC602C0983520049BC6C /* YouAreThePuzzleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouAreThePuzzleApp.swift; sourceTree = "<group>"; };
-		2ECAEC622C0983520049BC6C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2ECAEC642C0983540049BC6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2ECAEC672C0983540049BC6C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2ECAEC6E2C099EDE0049BC6C /* PuzzleTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTile.swift; sourceTree = "<group>"; };
+		2ECAEC702C099F1B0049BC6C /* PuzzleTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTileView.swift; sourceTree = "<group>"; };
+		2ECAEC722C09A1D90049BC6C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2ECAEC762C09BE8C0049BC6C /* PuzzleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				2ECAEC602C0983520049BC6C /* YouAreThePuzzleApp.swift */,
-				2ECAEC622C0983520049BC6C /* ContentView.swift */,
+				2ECAEC752C09A1F20049BC6C /* Views */,
 				2ECAEC642C0983540049BC6C /* Assets.xcassets */,
 				2ECAEC662C0983540049BC6C /* Preview Content */,
 			);
@@ -65,6 +71,17 @@
 				2ECAEC672C0983540049BC6C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2ECAEC752C09A1F20049BC6C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2ECAEC702C099F1B0049BC6C /* PuzzleTileView.swift */,
+				2ECAEC722C09A1D90049BC6C /* ContentView.swift */,
+				2ECAEC762C09BE8C0049BC6C /* PuzzleLoader.swift */,
+				2ECAEC6E2C099EDE0049BC6C /* PuzzleTile.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ECAEC632C0983520049BC6C /* ContentView.swift in Sources */,
+				2ECAEC772C09BE8C0049BC6C /* PuzzleLoader.swift in Sources */,
+				2ECAEC6F2C099EDE0049BC6C /* PuzzleTile.swift in Sources */,
+				2ECAEC712C099F1B0049BC6C /* PuzzleTileView.swift in Sources */,
+				2ECAEC732C09A1D90049BC6C /* ContentView.swift in Sources */,
 				2ECAEC612C0983520049BC6C /* YouAreThePuzzleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
